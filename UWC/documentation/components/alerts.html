@@ -28,7 +28,7 @@
 		<div class="main-header">
 			<div class="logo-header" data-background-color="light-blue2">
 				<a href="../index.html" class="logo" style="color: #ffffff;">
-					<img src="../../assets/img/icon.png"> UWC.2.0
+					UWC.2.0
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
@@ -48,12 +48,12 @@
 						<li class="nav-item" style="display: flex; align-items:center;">
 							<p style="font-size: 24px; margin: 0px 8px 0px 0px;">&#128269;</p>
 							<p style="font-size: 24px; margin: 0px 8px 0px 0px;">&#128276;</p>
-							<div style="width: 32px; height: 32px; background-image: url(https://tuyengiao.vn/Uploads/trandoantien/224lenin.jpg);
+							<div style="width: 32px; height: 32px; background-image: url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSLUMsySRxsYWfUKOqT7aJVq-2fSQAWTc4j5d4YwW26E1Ykdc6e);
 							background-position: center;
 							background-repeat: no-repeat;
 							background-size: cover;
 							border-radius: 50%;"></div>
-							<p style="color: #ffffff; font-weight: bold; margin: 0px 8px 0px 8px;">Vladimir Ilyich Lenin</p>
+							<p style="color: #ffffff; font-weight: bold; margin: 0px 8px 0px 8px;">Olivia Rodrigo</p>
 						</li>
 					</ul>
 				</div>
@@ -64,8 +64,8 @@
 			<div class="sidebar-wrapper scrollbar scrollbar-inner">
 				<div class="sidebar-content">
 					<ul class="nav nav-info">
-						<li class="nav-item">
-							<a href="../index.html">
+						<li class="nav-item active">
+							<a href="/documentation/index.html">
 								<i class="fas fa-home"></i>
 								<p>Trang chủ</p>
 							</a>
@@ -76,13 +76,13 @@
 							</span>
 							<h4 class="text-section">Mô đun</h4>
 						</li>
-						<li class="nav-item active">
-							<a href="./alerts.html">
+						<li class="nav-item">
+							<a href="components/alerts.html">
 								<p>Nhiệm vụ</p>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="./avatars.html">
+							<a href="#">
 								<p>Nhân viên</p>
 							</a>
 						</li>
@@ -118,54 +118,78 @@
 			</div>
 		</div>
 		<div class="main-panel">
-			<div class="content content-documentation">
-				<nav class="navbar navbar-light bg-light">
-					<form class="col-12 d-flex justify-content-around mt-3">
-						<div class="form-inline">
-							<div class="dropdown">
-								<button class="btn btn-secondary dropdown-toggle mr-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								  Chuyến xe
-								</button>
-								<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-								  <a class="dropdown-item" href="#">Action</a>
-								  <a class="dropdown-item" href="#">Another action</a>
-								  <a class="dropdown-item" href="#">Something else here</a>
-								</div>
-							</div>
-							<div class="dropdown">
-								<button class="btn btn-secondary dropdown-toggle mr-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								  Quận
-								</button>
-								<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-								  <a class="dropdown-item" href="#">Action</a>
-								  <a class="dropdown-item" href="#">Another action</a>
-								  <a class="dropdown-item" href="#">Something else here</a>
-								</div>
-							</div>
-							<div class="dropdown">
-								<button class="btn btn-secondary dropdown-toggle mr-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								  Phường
-								</button>
-								<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-								  <a class="dropdown-item" href="#">Action</a>
-								  <a class="dropdown-item" href="#">Another action</a>
-								  <a class="dropdown-item" href="#">Something else here</a>
-								</div>
-							</div>
-							<div class="dropdown">
-								<button class="btn btn-secondary dropdown-toggle mr-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								  Trạng thái
-								</button>
-								<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-								  <a class="dropdown-item" href="#">Action</a>
-								  <a class="dropdown-item" href="#">Another action</a>
-								  <a class="dropdown-item" href="#">Something else here</a>
-								</div>
-							</div>
+			<div class="content content-documentation" align="center">
+				<form class="m-3 w-50" align="left">
+					<div class="form-group">
+						<label for="InputUsername1">Nhân viên</label>
+						<div class="form-group">
+						  <select class="form-control" name="" id="Staff">
+							<option selected disabled id="defaultStaff">Chọn công nhân</option>
+							<option>Lao công 1</option>
+							<option>Lao công 2</option>
+							<option>Lao công 3</option>
+							<option>Lao công 4</option>
+							<option>Lao công 5</option>
+						  </select>
 						</div>
-						<button class="btn btn-secondary" type="button">Tạo nhiệm vụ</button>
-					</form>
-				</nav>
+					</div>
+
+					<div class="form-group">
+						<label for="InputUsername1">Phương tiện</label>
+						<div class="form-group">
+						  <select class="form-control" name="" id="Vehicle">
+							<option selected disabled id="defaultVehicle">Chọn phương tiện</option>
+							<option>Xe 1</option>
+							<option>Xe 2</option>
+							<option>Xe 3</option>
+						  </select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="InputUsername1">Địa điểm</label>
+						<div class="form-group">
+						  <select class="form-control" name="" id="Site">
+							<option selected disabled id="defaultSite">Chọn địa điểm thu gom</option>
+							<option>Địa điểm 1</option>
+							<option>Địa điểm 2</option>
+							<option>Địa điểm 3</option>
+							<option>Địa điểm 4</option>
+						  </select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<button class="btn btn-primary" type="button" id="CreateTask">Tạo nhiệm vụ</button>
+					</div>
+				</form>
+
+				<table class="table table-striped table-hover m-3" id="TaskTable" style="width:85%">
+					<thead class = "thead-dark">
+					  <tr>
+						<th scope="col" style="width:5%">STT</th>
+						<th scope="col" style="width:35%">Công nhân</th>
+						<th scope="col" style="width:30%">Phương tiện</th>
+						<th scope="col" style="width:30%">Địa điểm thu gom</th>
+					  </tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+
+				<div id="myModal" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  					<div class="modal-dialog modal-sm">
+    					<div class="modal-content">
+							<div class="modal-body">
+							<h6 style="font-size:1.5em" id="alert">Success!</h6>
+							</div>
+							<div class="row justify-content-center m-3">
+								<button type="button" class="btn btn-primary" id="closeModal">OK</button>
+							</div>
+    					</div>
+  					</div>
+				</div>
+
 			</div>
 		</div>
 	</div>
@@ -195,6 +219,17 @@
 		'right-trim': true,
 	});
 	
+	function counter() {
+    if ( typeof counter.value == 'undefined' ) {
+        counter.value = 0;
+    }
+
+    // Do something stupid to indicate the value
+    counter.value++;
+
+	return counter.value;
+	}
+
 	// handle links with @href started with '#' only
 	$(document).on('click', 'a[href^="#"]', function(e) {
 		// target element id
@@ -215,5 +250,45 @@
 		// animated top scrolling
 		$('body, html').animate({scrollTop: pos});
 	});
+
+	document.getElementById("CreateTask").addEventListener("click", (event)=>{
+		var Worker = document.getElementById("Staff").value;
+		var Vehicle = document.getElementById("Vehicle").value;
+		var CollectionPoint = document.getElementById("Site").value;
+
+		if(Worker == document.getElementById("defaultStaff").innerHTML){
+			document.getElementById("alert").innerHTML = "Chưa lựa chọn công nhân!";
+			$("#myModal").modal();
+		} else if (Vehicle == document.getElementById("defaultVehicle").innerHTML){
+			document.getElementById("alert").innerHTML = "Chưa lựa chọn phương tiện!";
+			$("#myModal").modal();
+		} else if (CollectionPoint == document.getElementById("defaultSite").innerHTML){
+			document.getElementById("alert").innerHTML = "Chưa lựa chọn địa điểm!";
+			$("#myModal").modal();
+		} else {
+			var tableRef = document.getElementById("TaskTable").getElementsByTagName("tbody")[0];
+			var newRow = tableRef.insertRow(tableRef.rows.length);
+
+			var newText = document.createTextNode(counter());
+			newRow.insertCell().appendChild(newText);
+			var newText = document.createTextNode(Worker);
+			newRow.insertCell().appendChild(newText);
+			var newText = document.createTextNode(Vehicle);
+			newRow.insertCell().appendChild(newText);
+			var newText = document.createTextNode(CollectionPoint);
+			newRow.insertCell().appendChild(newText);
+
+			document.getElementById("alert").innerHTML = "Thành công!";
+			$("#myModal").modal();
+
+			document.getElementById("Staff").value = document.getElementById("defaultStaff").innerHTML;
+			document.getElementById("Vehicle").value = document.getElementById("defaultVehicle").innerHTML;
+			document.getElementById("Site").value = document.getElementById("defaultSite").innerHTML
+		}
+	})
+
+	document.getElementById("closeModal").addEventListener("click", (event)=>{
+		$("#myModal").modal("toggle");
+	})
 </script>
 </html>
