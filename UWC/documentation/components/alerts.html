@@ -2,11 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<<<<<<< HEAD
 	<title>Alert | Atlantis Bootstrap Dashboard</title>
-=======
-	<title>UWC | Nhiệm vụ</title>
->>>>>>> 32baeb5 (fix refresh)
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="../../assets/img/icon.ico" type="image/x-icon"/>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -32,11 +28,7 @@
 		<div class="main-header">
 			<div class="logo-header" data-background-color="light-blue2">
 				<a href="../index.html" class="logo" style="color: #ffffff;">
-<<<<<<< HEAD
 					UWC.2.0
-=======
-					<img class= "resize" src="../../assets/img/truck.jpg" width = "50" height = "40"> UWC.2.0
->>>>>>> 32baeb5 (fix refresh)
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
@@ -72,13 +64,8 @@
 			<div class="sidebar-wrapper scrollbar scrollbar-inner">
 				<div class="sidebar-content">
 					<ul class="nav nav-info">
-<<<<<<< HEAD
 						<li class="nav-item active">
 							<a href="/documentation/index.html">
-=======
-						<li class="nav-item">
-							<a href="../index.html">
->>>>>>> 32baeb5 (fix refresh)
 								<i class="fas fa-home"></i>
 								<p>Trang chủ</p>
 							</a>
@@ -89,22 +76,13 @@
 							</span>
 							<h4 class="text-section">Mô đun</h4>
 						</li>
-<<<<<<< HEAD
 						<li class="nav-item">
 							<a href="components/alerts.html">
-=======
-						<li class="nav-item active">
-							<a href="./alerts.html">
->>>>>>> 32baeb5 (fix refresh)
 								<p>Nhiệm vụ</p>
 							</a>
 						</li>
 						<li class="nav-item">
-<<<<<<< HEAD
 							<a href="#">
-=======
-							<a href="avatars.html">
->>>>>>> 32baeb5 (fix refresh)
 								<p>Nhân viên</p>
 							</a>
 						</li>
@@ -240,17 +218,6 @@
 		'left-trim': true,
 		'right-trim': true,
 	});
-	
-	function counter() {
-    if ( typeof counter.value == 'undefined' ) {
-        counter.value = 0;
-    }
-
-    // Do something stupid to indicate the value
-    counter.value++;
-
-	return counter.value;
-	}
 
 	// handle links with @href started with '#' only
 	$(document).on('click', 'a[href^="#"]', function(e) {
@@ -273,6 +240,37 @@
 		$('body, html').animate({scrollTop: pos});
 	});
 
+	function counter() {
+    if ( typeof counter.value == 'undefined' ) {
+        counter.value = 0;
+    }
+    counter.value++;
+	return counter.value;
+	}
+
+	function addRow(data, index){
+		var tableRef = document.getElementById("TaskTable").getElementsByTagName("tbody")[0];
+		var newRow = tableRef.insertRow(tableRef.rows.length);
+
+		var newText = document.createTextNode(counter());
+		newRow.insertCell().appendChild(newText);
+		var newText = document.createTextNode(Object.values(data[index])[0]);
+		newRow.insertCell().appendChild(newText);
+		var newText = document.createTextNode(Object.values(data[index])[1]);
+		newRow.insertCell().appendChild(newText);
+		var newText = document.createTextNode(Object.values(data[index])[2]);
+		newRow.insertCell().appendChild(newText);
+	}
+
+	var task_data = new Array();
+	task_data = JSON.parse(localStorage.getItem("task_data"));
+	
+	if(task_data != null){
+		for(i = 0; i < task_data.length; i++){
+			addRow(task_data, i);
+		}
+	}
+
 	document.getElementById("CreateTask").addEventListener("click", (event)=>{
 		var Worker = document.getElementById("Staff").value;
 		var Vehicle = document.getElementById("Vehicle").value;
@@ -288,24 +286,23 @@
 			document.getElementById("alert").innerHTML = "Chưa lựa chọn địa điểm!";
 			$("#myModal").modal();
 		} else {
-			var tableRef = document.getElementById("TaskTable").getElementsByTagName("tbody")[0];
-			var newRow = tableRef.insertRow(tableRef.rows.length);
-
-			var newText = document.createTextNode(counter());
-			newRow.insertCell().appendChild(newText);
-			var newText = document.createTextNode(Worker);
-			newRow.insertCell().appendChild(newText);
-			var newText = document.createTextNode(Vehicle);
-			newRow.insertCell().appendChild(newText);
-			var newText = document.createTextNode(CollectionPoint);
-			newRow.insertCell().appendChild(newText);
+			var new_task = {"Staff":Worker, "Vehicle":Vehicle, "Site":CollectionPoint};
+			
+			if(task_data == null){
+				task_data = new Array(new_task);
+			} else {
+				task_data.push(new_task);
+			}
+			localStorage.setItem("task_data", JSON.stringify(task_data));
+		
+			addRow(task_data, task_data.length - 1);
 
 			document.getElementById("alert").innerHTML = "Thành công!";
 			$("#myModal").modal();
 
 			document.getElementById("Staff").value = document.getElementById("defaultStaff").innerHTML;
 			document.getElementById("Vehicle").value = document.getElementById("defaultVehicle").innerHTML;
-			document.getElementById("Site").value = document.getElementById("defaultSite").innerHTML
+			document.getElementById("Site").value = document.getElementById("defaultSite").innerHTML;
 		}
 	})
 
